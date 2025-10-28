@@ -13,3 +13,13 @@ def count_characters(file_contents):
         else:
             character_count[c] = 1
     return character_count
+
+# Returns what to sort on
+def sort_on(items):
+    return items["num"]
+
+# Sorts the dictionary of character_count
+def sorted_list(character_count):
+    counted_char_list = [{"char": c, "num": n} for c, n in character_count.items()]
+    counted_char_list.sort(reverse=True, key=sort_on)
+    return counted_char_list
